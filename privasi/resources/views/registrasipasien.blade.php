@@ -46,8 +46,6 @@
           <th>Nama Pasien</th>
           <th>Alamat</th>
           <th>No.Telp</th>
-          <th>RT / RW</th>
-          <th>Kelurahan</th>
           <th>Tanggal Lahir</th>
           <th>Jenis Kelamin</th>
           <th>Action</th>
@@ -61,10 +59,8 @@
           </td>
           <td><b>{{$cp->genid_pasien}}</b></td>
           <td>{{$cp->nama_pasien}}</td>
-          <td>{{$cp->alamat_pasien}}</td>
+          <td>{{$cp->alamat_pasien}} RT/RW  {{$cp->rtrw}}  </td>
           <td>{{$cp->telp_pasien}}</td>
-          <td>{{$cp->rtrw}}</td>
-          <td>{{$cp->kelurahan_id}}</td>
           <td>{{$cp->tanggallahir_pasien}}</td>
           <td>{{$cp->jeniskelamin_pasien}}</td>
           <td>
