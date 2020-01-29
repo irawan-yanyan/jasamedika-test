@@ -30,7 +30,7 @@ http://localhost/jasamedika-test/
    sample data sudah dibuat:
 		
 		E-Mail Address : shelly@gmail.com
-		Password :yanyanirawan79
+		Password :yanyanirawan
 
 3. ada beberapa sample data kelurahan dan pasien ==>> DBJASAMEDIKA.sql
 
