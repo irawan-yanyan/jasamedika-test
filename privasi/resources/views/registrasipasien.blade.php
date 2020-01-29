@@ -24,12 +24,12 @@
                 </div>
         @endif
 
-    <h2>List Pasien</h2>
+    <h2>Daftar Pasien</h2>
       <div class="row">  
         <div class="col-md-10">
         <form action="" method="get">
           <button type="submit" class="btn btn-success">Cari Kelurahan</button>
-          <input type="text" name="cari_pasien"  placeholder="Cari Pasien">
+          <input type="text" name="cari_pasien" size="60" placeholder="Cari Pasien">
           <!--input type="text" name="cari_kelurahan"  placeholder="Cari Kelurahan">-->
         </form>
         </div>
@@ -68,17 +68,20 @@
           <td>{{$cp->tanggallahir_pasien}}</td>
           <td>{{$cp->jeniskelamin_pasien}}</td>
           <td>
-          <a href="" class="btn btn-success">Edit</a>
+          <a href="{{url('editpasien/'.$cp->id.'')}}" class="btn btn-success">Edit</a>
            <a href="{{url('hapuspasien/'.$cp->id.'')}}" class="btn btn-danger"
              onclick="javascript:return confirm('Anda yakin akan menghapus data kelurahan')">Delete</a>
-           
-              <a href="" class="btn btn-warning">Cetak</a> 
+              <a href="{{url('cetakpasien/'.$cp->id.'')}}" class="btn btn-warning">Cetak</a> 
                      
           </td>
         </tr>
       @endforeach
       </tbody>
     </table>
+         Page:{{$Pasien->currentPage()}}<br>
+        Data Amount:{{$Pasien->total()}}<br>
+        Data per Page:{{$Pasien->perPage()}}<br>
+        {{$Pasien->links()}}
        
  <!-- </div> -->
  

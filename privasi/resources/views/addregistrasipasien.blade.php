@@ -17,8 +17,7 @@
                          placeholder="Nama Pasien" required>
                </div>
                <div class="form-group">
-                   <input type="text" name="alamat_pasien" class="form-control" 
-                         placeholder="Alamat Pasien" required>
+                  <textarea name="alamat_pasien" class="form-control" required></textarea>
                </div>
                <div class="form-group">
                    <input type="text" name="telp_pasien" class="form-control" 

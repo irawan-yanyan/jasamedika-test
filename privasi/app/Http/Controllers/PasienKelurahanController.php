@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Kelurahan;
 use App\Pasien;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class PasienKelurahanController extends Controller
 {
@@ -40,9 +41,6 @@ if(Auth::user() && Auth::user()->jabatan == "admin"){
        'nama_kecamatan'=> 'required',
        'nama_kota' => 'required',
    ]);
-
-
-     // echo $request->nama_kelurahan."hallo"; exit();
 
        Kelurahan::create([
        'nama_kelurahan' => $request->nama_kelurahan,
@@ -119,40 +117,18 @@ public function registrasipasien(Request $request){
    }else{
          return redirect('login');
    }
-   /*
-   
-      if(isset($_GET['cari_kelurahan'])){
-         $Kelurahan = Kelurahan::where('nama_kelurahan', 'LIKE', '%' 
-                           .$_GET['cari_kelurahan']. '%')->paginate(10);
-      }else{
-         $Kelurahan = Kelurahan::paginate(10);
-      }
-       return view('pasienkelurahan',['Kelurahan'=>$Kelurahan]);
-   
-   */
 
 }
 
 public function tambahpasien(){
    if(Auth::user()){
-          $Kelurahan = Kelurahan::all();
-         
+         $Kelurahan = Kelurahan::all();
          return view('addregistrasipasien',['Kelurahan'=>$Kelurahan]);
 
    }else{
          return redirect('login');
    }
-   /*
    
-      if(isset($_GET['cari_kelurahan'])){
-         $Kelurahan = Kelurahan::where('nama_kelurahan', 'LIKE', '%' 
-                           .$_GET['cari_kelurahan']. '%')->paginate(10);
-      }else{
-         $Kelurahan = Kelurahan::paginate(10);
-      }
-       return view('pasienkelurahan',['Kelurahan'=>$Kelurahan]);
-   
-   */
 
 }
 public function add_leading_zero($value, $threshold = 2) {
@@ -208,23 +184,57 @@ public function hapuspasien($id){
 }
 public function editpasien($id){
    if(Auth::user()){
-   
-         return view('editregistrasipasien');
+         $Kelurahan = Kelurahan::all();
+         $Pasien = Pasien::find($id);
+         return view('editregistrasipasien',['Pasien'=>$Pasien,'Kelurahan'=>$Kelurahan]);
 
    }else{
          return redirect('login');
    }
-   /*
-   
-      if(isset($_GET['cari_kelurahan'])){
-         $Kelurahan = Kelurahan::where('nama_kelurahan', 'LIKE', '%' 
-                           .$_GET['cari_kelurahan']. '%')->paginate(10);
-      }else{
-         $Kelurahan = Kelurahan::paginate(10);
-      }
-       return view('pasienkelurahan',['Kelurahan'=>$Kelurahan]);
-   
-   */
+}
+
+public function updatepasien(Request $request){
+   if(Auth::user()){
+      //var $genid_pasien;
+       $this->validate($request,[
+                        'nama_pasien' => 'required',
+                        'telp_pasien' => 'required',
+                        'alamat_pasien'=> 'required',
+                        'rtrw_pasien' => 'required',
+                        'tgllahir_pasien' => 'required',
+                        'jeniskelamin_pasien' => 'required',
+                        'kelurahan_id' => 'required',
+      ]);
+
+               $Pasien = Pasien::find($request->id);
+               $Pasien->nama_pasien = $request->nama_pasien;
+               $Pasien->telp_pasien = $request->telp_pasien;
+               $Pasien->alamat_pasien = $request->alamat_pasien;
+               $Pasien->user_id = Auth::user()->id;
+               $Pasien->rtrw = $request->rtrw_pasien;
+               $Pasien->jeniskelamin_pasien = $request->jeniskelamin_pasien;
+               $Pasien->kelurahan_id = $request->kelurahan_id;
+               $Pasien->tanggallahir_pasien = $request->tgllahir_pasien;
+               //$genid_pasien = $Pasien->alamat_pasien
+               $Pasien->save();
+               return redirect('registrasipasien')->with('success',' Nama pasien  '.
+                     $request->nama_pasien.' dengan Id Pasien :'.$Pasien->genid_pasien.'telah berhasil diubah.' ); 
+   }else{
+         return redirect('login');
+   }
+
+}
+
+public function cetakpasien($id){
+   if(Auth::user()){
+      $Pasien = Pasien::find($id);
+      // export to pdf
+      $pdf = PDF::loadview('pasien_pdf',['Pasien'=>$Pasien]);
+      return $pdf->download('laporan-pasien-pdf');
+            
+   }else{
+      return redirect('login');
+   }
 
 }
 

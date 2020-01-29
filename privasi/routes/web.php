@@ -25,7 +25,10 @@ Route::post('/updatekelurahanpasien','PasienKelurahanController@updatekelurahanp
 Route::get('/registrasipasien','PasienKelurahanController@registrasipasien');
 Route::get('/tambahpasien','PasienKelurahanController@tambahpasien');
 Route::get('/editpasien/{id}','PasienKelurahanController@editpasien');
+Route::post('/updatepasien','PasienKelurahanController@updatepasien');
 Route::post('/simpanpasien','PasienKelurahanController@simpanpasien');
 Route::get('/hapuspasien/{id}','PasienKelurahanController@hapuspasien');
+//cetak id pasien by PDF
+Route::get('/cetakpasien/{id}','PasienKelurahanController@cetakpasien');
 
 ?>

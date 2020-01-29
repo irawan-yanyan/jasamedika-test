@@ -4,7 +4,7 @@
   <div class="container">
     <h3> Edit Data Kelurahan </h3>
     <hr>
-  <form action="{{url('updatekelurahanpasien')}}" method="post">
+  <form action="{{url('updatepasien')}}" method="post">
       @csrf
     @foreach($editkelurahan as $valuekelurahan)
       <input type="hidden" name="id" class="form-control" value="{{$valuekelurahan->id}}">
