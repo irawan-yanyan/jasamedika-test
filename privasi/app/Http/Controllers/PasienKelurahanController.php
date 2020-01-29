@@ -230,7 +230,7 @@ public function cetakpasien($id){
       $Pasien = Pasien::find($id);
       // export to pdf
       $pdf = PDF::loadview('pasien_pdf',['Pasien'=>$Pasien]);
-      return $pdf->download('laporan-pasien-pdf');
+      return $pdf->download('laporan-pasien.pdf');
             
    }else{
       return redirect('login');
