@@ -13,7 +13,7 @@
             
                     Nama Pasien : <b> {{$Pasien->nama_pasien}} </b>
            <br />
-                   Alamat Pasien : <b>{{$Pasien->alamat_pasien}} &nbsp; &nbsp; {{$Pasien->rtrw_pasien}} </b>
+                   Alamat Pasien : <b>{{$Pasien->alamat_pasien}} RT/RW {{$Pasien->rtrw}} </b>
             <br />
                    Jenis Kelamin Pasien : <b> {{$Pasien->jeniskelamin_pasien}} </b>    
             <br />

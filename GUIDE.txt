@@ -1,0 +1,37 @@
+== GUIDE ==
+http://localhost/jasamedika-test/
+
+FRAMEWORK dan Library / dependency
+=====================================
+menggunakan Laravel : 5.8.35 ||  PHP 7.3.10 || Mysql 15.1 Distrib 10.4.8-MariaDB
+menambahkan barryvdh/pdf => utk cetak format pdf
+
+DATABASE DAN TABLE
+=====================
+database : dbjasamedika
+table : users,tbpasien,tbkelurahan ( disertakan dummynya =>> DBJASAMEDIKA.sql)
+
+
+SAMPLE DATA DAN MENJALANKAN APLIKASI
+=====================================
+http://localhost/jasamedika-test/
+
+1. secara DEFAULT akses users yang mempunyai autentikasi dan otoritas default ADMIN
+   sample data sudah dibuat :
+
+		E-Mail Address : rianwp@gmail.com
+		Password :yanyanirawan79
+
+   tugas sesuai modul : memberikan hak ases ke pada OPERATOR
+			dan input data kelurahan
+
+2. tugas sesuai modul : hak akses user sebagai OPERATOR utk registrasi 
+                        generate id pasien dan cetak kartu pasien
+   sample data sudah dibuat:
+		
+		E-Mail Address : shelly@gmail.com
+		Password :yanyanirawan79
+
+3. ada beberapa sample data kelurahan dan pasien ==>> DBJASAMEDIKA.sql
+
+
