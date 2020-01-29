@@ -34,4 +34,13 @@ http://localhost/jasamedika-test/
 
 3. ada beberapa sample data kelurahan dan pasien ==>> DBJASAMEDIKA.sql
 
+SHARE FILE CODING
+================================================================
+GOOGLE DRIVE
+https://drive.google.com/file/d/1sjFwLq2wWI3zkW8Hy_2kDh3Zd26BSOP9/view?usp=sharing
+
+GITHUB
+https://github.com/irawan-yanyan/jasamedika-test.git
+
+
 
