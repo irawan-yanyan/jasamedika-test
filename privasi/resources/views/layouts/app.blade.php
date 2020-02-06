@@ -38,14 +38,14 @@
 	       });
 	     */
 	      let $btn = $('.fa'),
-	      	  $input = $('#tgllahir_pasien');
+	      	  $input = $('#tgllahir_pasien');$input.click="false";
 		  dp =$input.datepicker({
 		  		'format' : 'yyyy-mm-dd',
 		  }).data('datepicker');	
 	       $btn.on('click',function(){
 			dp.show();
-			$input.focus();
-
+		//	$input.focus();
+			
 	       });	       
 
         });

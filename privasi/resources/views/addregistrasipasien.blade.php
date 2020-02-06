@@ -30,7 +30,7 @@
                <div class="form-group">
                    
 			 <input class="" type="text" id="tgllahir_pasien" name="tgllahir_pasien" 
-                               placeholder="Tanggal Lahir ex. 1979-02-23" size="32" required="required"> 
+                               placeholder="Tanggal Lahir ex. 1979-02-23" size="32" required="required" readonly> 
 	                               <i class="fa fa-calendar" style="font-size:24px"></i>
                </div>
                <div class="form-group">
