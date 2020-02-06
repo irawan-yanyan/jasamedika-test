@@ -17,7 +17,7 @@
                          placeholder="Nama Pasien" required>
                </div>
                <div class="form-group">
-                  <textarea name="alamat_pasien" class="form-control" required></textarea>
+                  <textarea name="alamat_pasien" class="form-control" placeholder="Isi Alamat Pasien" required></textarea>
                </div>
                <div class="form-group">
                    <input type="text" name="telp_pasien" class="form-control" 
@@ -29,16 +29,17 @@
                </div>
                <div class="form-group">
                    
-                         <input class="form-control" type="text" id="tgllahir_pasien" name="tgllahir_pasien" placeholder="Tanggal Lahir ex. 1979-02-23" required="required">
+			 <input class="" type="text" id="tgllahir_pasien" name="tgllahir_pasien" 
+                               placeholder="Tanggal Lahir ex. 1979-02-23" size="32" required="required"> 
+	                               <i class="fa fa-calendar" style="font-size:24px"></i>
                </div>
                <div class="form-group">
                    <div class="row">
-                       <div class="col-md-1">
+			 
                          <label for="Pria">Pria</label>
-                         <input type="radio" class="form-control" name="jeniskelamin_pasien" value="Pria" required>
+                         <input type="radio" class="" name="jeniskelamin_pasien" value="Pria" required>
                          <label for="Wanita">Wanita</label>
-                         <input type="radio" class="form-control" name="jeniskelamin_pasien" value="Wanita" required> 
-                      </div> 
+                         <input type="radio" class="" name="jeniskelamin_pasien" value="Wanita" required> 
                     </div>
                </div>
                <div class="form-group">

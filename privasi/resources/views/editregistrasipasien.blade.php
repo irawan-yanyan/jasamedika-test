@@ -29,9 +29,10 @@
                </div>
                <div class="form-group">
                <label for="tanggallahir">Tanggal Lahir Pasien</label>
-                         <input class="form-control" type="text" id="tgllahir_pasien"
+                         <input class="" size="32" type="text" id="tgllahir_pasien"
                              name="tgllahir_pasien" value="{{$Pasien->tanggallahir_pasien}}" required="required">
-               </div>
+	       		 <i class="fa fa-calendar" style="font-size:24px"></i>
+		</div>
                <div class="form-group">
                          
                         @if($Pasien->jeniskelamin_pasien=="Pria")

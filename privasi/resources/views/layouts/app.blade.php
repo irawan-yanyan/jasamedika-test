@@ -18,7 +18,7 @@
     
     <link type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet"/>
     <link type="text/css" href="{{asset('assets/css/datepicker.css')}}" rel="stylesheet"/>
-
+    <link type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet"/>
    <!-- <link type="text/css" href="{{asset('assets/css/jquery.ui.css')}}" rel="stylesheet"/>
     <link type="text/css" href="{{asset('assets/css/jquery-ui.theme.min.css')}}" rel="stylesheet"/> -->
     <script type="text/javascript" src="{{asset('assets/js/jquery-3.4.1.js')}}"></script>
@@ -29,7 +29,24 @@
     <script type="text/javascript">
         $(document).ready(function(){
             //$("#tgllahir_pasien").datepicker({dateFormat:"yy-mm-dd"});
-           $("#tgllahir_pasien").datepicker({format:"yyyy-mm-dd"});
+             $("#tgllahir_pasien").datepicker({format:"yyyy-mm-dd"});
+	     /*
+	     $("#tgllahir_pasien").datepicker({
+	   			    dateFormat:"yyyy-mm-dd",i
+				    showOn: "button",
+				    buttonText: "<i class="fa fa-calendar"></i>"		
+	       });
+	     */
+	      let $btn = $('.fa'),
+	      	  $input = $('#tgllahir_pasien');
+		  dp =$input.datepicker({
+		  		'format' : 'yyyy-mm-dd',
+		  }).data('datepicker');	
+	       $btn.on('click',function(){
+			dp.show();
+			$input.focus();
+
+	       });	       
 
         });
     </script>
